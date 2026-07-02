@@ -223,7 +223,7 @@ ul {
   display: flex;
   gap: 18px;
   width: max-content;
-  animation: scroll-left 30s linear infinite;
+  animation: scroll-left 22s linear infinite;
   padding: 4px 0 12px;
   will-change: transform;
 }
@@ -245,7 +245,7 @@ ul {
 /* Даже при системном «уменьшить движение» лента всё равно едет — просто мягче и медленнее */
 @media (prefers-reduced-motion: reduce) {
   .services-track {
-    animation-duration: 70s;
+    animation-duration: 55s;
   }
 }
 
@@ -278,13 +278,13 @@ ul {
 }
 
 .service-card .service-price {
+  margin-top: auto; /* прижимает цену к низу — во всех карточках она на одном уровне */
   font-weight: 700;
   color: var(--color-primary-dark);
   font-size: 15px;
 }
 
 .service-card .service-link {
-  margin-top: auto;
   color: var(--color-accent);
   font-weight: 600;
   font-size: 14px;
