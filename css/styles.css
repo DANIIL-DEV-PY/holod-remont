@@ -1,0 +1,523 @@
+/* ===== Токены ===== */
+:root {
+  --color-primary: #4a90a4;      /* мягкий сине-бирюзовый */
+  --color-primary-dark: #35707f;
+  --color-accent: #f2a154;       /* тёплый янтарный (спокойнее, чем яркий оранжевый) */
+  --color-accent-dark: #e08b3a;
+  --color-bg: #f3f6f8;           /* мягкий прохладный фон */
+  --color-surface: #ffffff;
+  --color-text: #2b3440;         /* не чистый чёрный — мягче для глаз */
+  --color-text-muted: #667180;
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --shadow-card: 0 4px 16px rgba(53, 112, 127, 0.08);
+  --shadow-card-hover: 0 8px 24px rgba(53, 112, 127, 0.15);
+  --max-width: 1100px;
+}
+
+/* ===== Сброс ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== Хедер ===== */
+.site-header {
+  background: var(--color-surface);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-primary-dark);
+}
+
+.logo-icon {
+  font-size: 24px;
+}
+
+.header-cta {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .header-cta {
+    display: inline-flex;
+  }
+}
+
+/* ===== Кнопки ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  min-height: 44px;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--color-accent-dark);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary-dark);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* ===== Hero ===== */
+.hero {
+  background: linear-gradient(160deg, #e4eef1 0%, var(--color-bg) 60%);
+  padding: 48px 0 40px;
+}
+
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero h1 {
+  font-size: 28px;
+  line-height: 1.25;
+  color: var(--color-primary-dark);
+}
+
+.hero p {
+  color: var(--color-text-muted);
+  font-size: 16px;
+  max-width: 56ch;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.badge {
+  background: var(--color-surface);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  color: var(--color-primary-dark);
+  box-shadow: var(--shadow-card);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 72px 0 56px;
+  }
+  .hero h1 {
+    font-size: 40px;
+  }
+}
+
+/* ===== Секции ===== */
+.section {
+  padding: 40px 0;
+}
+
+.section-title {
+  font-size: 22px;
+  color: var(--color-primary-dark);
+  margin-bottom: 6px;
+}
+
+.section-subtitle {
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 28px;
+  }
+}
+
+/* ===== Лента услуг ===== */
+.services-marquee {
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+}
+
+.services-track {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  animation: scroll-left 30s linear infinite;
+  padding: 4px 0 12px;
+  will-change: transform;
+}
+
+.services-track:hover,
+.services-track:focus-within {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Даже при системном «уменьшить движение» лента всё равно едет — просто мягче и медленнее */
+@media (prefers-reduced-motion: reduce) {
+  .services-track {
+    animation-duration: 70s;
+  }
+}
+
+.service-card {
+  flex: 0 0 auto;
+  width: 220px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.service-card:hover,
+.service-card:focus-within {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+.service-card .service-icon {
+  font-size: 30px;
+}
+
+.service-card h3 {
+  font-size: 16px;
+  color: var(--color-text);
+}
+
+.service-card .service-price {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  font-size: 15px;
+}
+
+.service-card .service-link {
+  margin-top: auto;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.service-card .service-link:hover,
+.service-card .service-link:focus-visible {
+  text-decoration: underline;
+}
+
+/* ===== О мастере ===== */
+.about-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.about-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 22px;
+}
+
+.about-card h3 {
+  color: var(--color-primary-dark);
+  margin-bottom: 8px;
+  font-size: 17px;
+}
+
+.about-card p {
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===== Страница услуги ===== */
+.service-detail {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 24px;
+  margin-top: 12px;
+}
+
+.service-detail .back-link {
+  display: inline-block;
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.service-detail .back-link:hover {
+  text-decoration: underline;
+}
+
+.service-detail h1 {
+  font-size: 24px;
+  color: var(--color-primary-dark);
+  margin-bottom: 8px;
+}
+
+.service-detail .price-tag {
+  display: inline-block;
+  background: #e4eef1;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.service-detail .service-description {
+  color: var(--color-text);
+  margin-bottom: 18px;
+  font-size: 15px;
+}
+
+.service-detail h2 {
+  font-size: 17px;
+  margin-bottom: 10px;
+  color: var(--color-text);
+}
+
+.service-detail .includes-list {
+  margin-bottom: 22px;
+}
+
+.service-detail .includes-list li {
+  padding: 6px 0;
+  padding-left: 26px;
+  position: relative;
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.service-detail .includes-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .service-detail {
+    padding: 36px;
+  }
+  .service-detail h1 {
+    font-size: 30px;
+  }
+}
+
+/* ===== Футер ===== */
+.site-footer {
+  background: var(--color-primary-dark);
+  color: #eaf5fb;
+  padding: 28px 0;
+  margin-top: 40px;
+}
+
+.site-footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Плавающая кнопка связи ===== */
+.contact-fab {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 100;
+  border-radius: 999px;
+  padding: 14px 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Модалка ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 32, 44, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 200;
+}
+
+.modal-overlay.hidden {
+  display: none;
+}
+
+.modal-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  max-width: 380px;
+  width: 100%;
+  position: relative;
+  box-shadow: var(--shadow-card-hover);
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+}
+
+.modal-close:hover,
+.modal-close:focus-visible {
+  background: var(--color-bg);
+}
+
+.modal-card h2 {
+  color: var(--color-primary-dark);
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.modal-card p.modal-subtitle {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.modal-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-contact-list a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.modal-contact-list a:hover,
+.modal-contact-list a:focus-visible {
+  background: #e4eef1;
+}
+
+.modal-contact-list .contact-icon {
+  font-size: 20px;
+}
+
+.modal-note {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}

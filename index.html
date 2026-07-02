@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ХолодСервис — ремонт холодильников и бытовой техники</title>
+  <meta name="description" content="Ремонт холодильного оборудования и бытовой техники на дому. Диагностика, заправка фреоном, замена компрессора, ремонт стиральных и посудомоечных машин, плит." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Ремонт холодильников и бытовой техники на дому</h1>
+      <p>Быстро находим причину поломки и устраняем её с гарантией. Выезжаем в удобное для вас время — оплата после ремонта.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" data-open-contact>Вызвать мастера</button>
+        <a class="btn btn-outline" href="#services">Все услуги и цены</a>
+      </div>
+      <div class="hero-badges">
+        <span class="badge">✔ Выезд на дом</span>
+        <span class="badge">✔ Гарантия на работы</span>
+        <span class="badge">✔ Оплата после ремонта</span>
+        <span class="badge">✔ Опыт более 10 лет</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Лента услуг -->
+  <section class="section" id="services">
+    <div class="container">
+      <h2 class="section-title">Наши услуги</h2>
+      <p class="section-subtitle">Наведите на карточку, чтобы остановить ленту. Нажмите «Подробнее» для описания.</p>
+    </div>
+    <div class="services-marquee">
+      <div class="services-track" id="services-track" tabindex="0" aria-label="Лента услуг с ценами"></div>
+    </div>
+  </section>
+
+  <!-- О мастере -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">Почему выбирают нас</h2>
+      <p class="section-subtitle">Работаем честно и аккуратно — как для себя.</p>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Опытный мастер</h3>
+          <p>Более 10 лет ремонтируем холодильное оборудование и бытовую технику всех марок.</p>
+        </div>
+        <div class="about-card">
+          <h3>Прозрачные цены</h3>
+          <p>Называем стоимость до начала работ. Никаких скрытых доплат и навязанных услуг.</p>
+        </div>
+        <div class="about-card">
+          <h3>Гарантия</h3>
+          <p>Даём гарантию на выполненные работы и установленные запчасти.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="js/services-data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    initSite(''); // база путей для главной страницы
+  </script>
+</body>
+</html>
