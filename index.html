@@ -13,8 +13,53 @@
 
   <!-- Hero -->
   <section class="hero">
+    <div class="decor-layer" aria-hidden="true">
+      <svg class="decor-icon decor-snowflake" viewBox="0 0 64 64">
+        <defs>
+          <linearGradient id="snowGrad-hero" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ffffff" />
+            <stop offset="1" stop-color="#bdf2ff" />
+          </linearGradient>
+        </defs>
+        <g stroke="url(#snowGrad-hero)" stroke-width="4" stroke-linecap="round" fill="none">
+          <g id="snowArm-hero">
+            <line x1="32" y1="32" x2="32" y2="8" />
+            <line x1="32" y1="16" x2="25" y2="10" />
+            <line x1="32" y1="16" x2="39" y2="10" />
+          </g>
+          <use href="#snowArm-hero" transform="rotate(60 32 32)" />
+          <use href="#snowArm-hero" transform="rotate(120 32 32)" />
+          <use href="#snowArm-hero" transform="rotate(180 32 32)" />
+          <use href="#snowArm-hero" transform="rotate(240 32 32)" />
+          <use href="#snowArm-hero" transform="rotate(300 32 32)" />
+        </g>
+      </svg>
+      <svg class="decor-icon decor-drop" viewBox="0 0 64 64">
+        <defs>
+          <linearGradient id="dropGrad-hero" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#eafcff" />
+            <stop offset="1" stop-color="#2fb8c4" />
+          </linearGradient>
+        </defs>
+        <path d="M32 6C32 6 14 30 14 42a18 18 0 0 0 36 0C50 30 32 6 32 6Z" fill="url(#dropGrad-hero)" />
+        <ellipse cx="24" cy="38" rx="4" ry="7" fill="#ffffff" opacity="0.55" />
+      </svg>
+      <svg class="decor-icon decor-wrench" viewBox="0 0 64 64">
+        <defs>
+          <linearGradient id="wrenchGrad-hero" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ffb86b" />
+            <stop offset="1" stop-color="#ff7a59" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke="url(#wrenchGrad-hero)" stroke-width="7" stroke-linecap="round">
+          <line x1="18" y1="46" x2="40" y2="24" />
+          <circle cx="46" cy="18" r="10" />
+          <circle cx="14" cy="50" r="7" />
+        </g>
+      </svg>
+    </div>
     <div class="container">
-      <h1>Ремонт холодильников и бытовой техники на дому</h1>
+      <h1><span class="accent-word">Ремонт</span> холодильников и бытовой техники на дому</h1>
       <p>Быстро находим причину поломки и устраняем её с гарантией. Выезжаем в удобное для вас время — оплата после ремонта.</p>
       <div class="hero-actions">
         <button class="btn btn-primary" data-open-contact>Вызвать мастера</button>
@@ -29,36 +74,91 @@
     </div>
   </section>
 
-  <!-- Лента услуг -->
+  <!-- Цифры -->
+  <section class="section stats-section" id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item" data-reveal>
+          <span class="stat-number" data-count-to="10" data-suffix="+">0</span>
+          <span class="stat-label">лет опыта</span>
+        </div>
+        <div class="stat-item" data-reveal>
+          <span class="stat-number" data-count-to="500" data-suffix="+">0</span>
+          <span class="stat-label">довольных клиентов</span>
+        </div>
+        <div class="stat-item" data-reveal>
+          <span class="stat-number" data-count-to="60" data-suffix=" мин">0</span>
+          <span class="stat-label">среднее время выезда</span>
+        </div>
+        <div class="stat-item" data-reveal>
+          <span class="stat-number" data-count-to="100" data-suffix="%">0</span>
+          <span class="stat-label">гарантия на работы</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Услуги -->
   <section class="section" id="services">
     <div class="container">
-      <h2 class="section-title">Наши услуги</h2>
-      <p class="section-subtitle">Наведите на карточку, чтобы остановить ленту. Нажмите «Подробнее» для описания.</p>
-    </div>
-    <div class="services-marquee">
-      <div class="services-track" id="services-track" tabindex="0" aria-label="Лента услуг с ценами"></div>
+      <h2 class="section-title" data-reveal>Наши услуги</h2>
+      <p class="section-subtitle" data-reveal>Полный список работ и цены. Нажмите «Узнать больше», чтобы посмотреть, что входит в услугу.</p>
+      <div class="services-list" id="services-list" aria-label="Список услуг с ценами"></div>
     </div>
   </section>
 
   <!-- О мастере -->
   <section class="section" id="about">
     <div class="container">
-      <h2 class="section-title">Почему выбирают нас</h2>
-      <p class="section-subtitle">Работаем честно и аккуратно — как для себя.</p>
+      <h2 class="section-title" data-reveal>Почему выбирают нас</h2>
+      <p class="section-subtitle" data-reveal>Работаем честно и аккуратно — как для себя.</p>
       <div class="about-grid">
-        <div class="about-card">
+        <div class="about-card" data-reveal>
           <h3>Опытный мастер</h3>
           <p>Более 10 лет ремонтируем холодильное оборудование и бытовую технику всех марок.</p>
         </div>
-        <div class="about-card">
+        <div class="about-card" data-reveal>
           <h3>Прозрачные цены</h3>
           <p>Называем стоимость до начала работ. Никаких скрытых доплат и навязанных услуг.</p>
         </div>
-        <div class="about-card">
+        <div class="about-card" data-reveal>
           <h3>Гарантия</h3>
           <p>Даём гарантию на выполненные работы и установленные запчасти.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="decor-layer" aria-hidden="true">
+      <svg class="decor-icon decor-drop decor-drop--sm" viewBox="0 0 64 64">
+        <defs>
+          <linearGradient id="dropGrad-cta" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#eafcff" />
+            <stop offset="1" stop-color="#2fb8c4" />
+          </linearGradient>
+        </defs>
+        <path d="M32 6C32 6 14 30 14 42a18 18 0 0 0 36 0C50 30 32 6 32 6Z" fill="url(#dropGrad-cta)" />
+        <ellipse cx="24" cy="38" rx="4" ry="7" fill="#ffffff" opacity="0.55" />
+      </svg>
+      <svg class="decor-icon decor-wrench decor-wrench--sm" viewBox="0 0 64 64">
+        <defs>
+          <linearGradient id="wrenchGrad-cta" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ffb86b" />
+            <stop offset="1" stop-color="#ff7a59" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke="url(#wrenchGrad-cta)" stroke-width="7" stroke-linecap="round">
+          <line x1="18" y1="46" x2="40" y2="24" />
+          <circle cx="46" cy="18" r="10" />
+          <circle cx="14" cy="50" r="7" />
+        </g>
+      </svg>
+    </div>
+    <div class="container cta-banner-inner">
+      <h2 data-reveal>Остались вопросы?<br />Позвоним и разберёмся бесплатно</h2>
+      <button class="btn btn-primary" data-open-contact data-reveal>Связаться с нами</button>
     </div>
   </section>
 
