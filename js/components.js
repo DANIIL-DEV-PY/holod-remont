@@ -18,7 +18,7 @@ function renderComponents(base) {
       <div class="container">
         <a class="logo" href="${base}index.html" aria-label="На главную">
           <span class="logo-icon" aria-hidden="true">🧊</span>
-          <span>ХолодСервис</span>
+          <span>Холод Сервис</span>
         </a>
         <button class="btn btn-outline header-cta" data-open-contact>Связаться</button>
       </div>`;
@@ -28,7 +28,7 @@ function renderComponents(base) {
   if (footer) {
     footer.innerHTML = `
       <div class="container">
-        <strong>ХолодСервис</strong> — ремонт холодильного оборудования и бытовой техники
+        <strong>Холод Сервис</strong> — ремонт холодильного оборудования и бытовой техники
         <span>Телефон: <a href="tel:${window.CONTACTS.phoneHref}">${window.CONTACTS.phoneDisplay}</a></span>
         <span>Мы во ВКонтакте: <a href="${window.CONTACTS.vk}" target="_blank" rel="noopener">vk.com</a></span>
         <span style="opacity:.7;font-size:12px;">Выезд на дом · Гарантия на работы · Оплата после ремонта</span>
