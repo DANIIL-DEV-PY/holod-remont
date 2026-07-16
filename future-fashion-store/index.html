@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NOVA THREAD - futurist fashion store</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="NOVA THREAD">
+        <span class="brand-mark">NT</span>
+        <span>NOVA THREAD</span>
+      </a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#catalog">Каталог</a>
+        <a href="#style-board">Образы</a>
+        <a href="#delivery">Доставка</a>
+      </nav>
+      <button class="icon-button cart-trigger" id="cartButton" type="button" aria-label="Открыть корзину">
+        <span class="bag-icon" aria-hidden="true"></span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="heroTitle">
+        <img class="hero-image" src="assets/hero-runway.png" alt="Футуристичная fashion-проходка в неоновом бутике" />
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">drop 07 / cyber atelier</p>
+          <h1 id="heroTitle">NOVA THREAD</h1>
+          <p class="hero-copy">
+            Магазин techwear и streetwear с быстрыми фильтрами, подборками образов и корзиной без перезагрузки.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#catalog">Смотреть каталог</a>
+            <button class="ghost-button" id="heroCartButton" type="button">Корзина</button>
+          </div>
+        </div>
+        <div class="signal-strip" aria-label="Параметры коллекции">
+          <span>14 образов</span>
+          <span>smart fits</span>
+          <span>24h drop</span>
+        </div>
+      </section>
+
+      <section class="shop-layout" id="catalog" aria-labelledby="catalogTitle">
+        <aside class="filters" aria-label="Фильтры каталога">
+          <div class="filter-head">
+            <p class="eyebrow">catalog control</p>
+            <h2>Фильтры</h2>
+          </div>
+
+          <div class="filter-group">
+            <h3>Размер</h3>
+            <div class="chip-row" id="sizeFilters">
+              <button class="chip active" type="button" data-size-filter="all">Все</button>
+              <button class="chip" type="button" data-size-filter="XS">XS</button>
+              <button class="chip" type="button" data-size-filter="S">S</button>
+              <button class="chip" type="button" data-size-filter="M">M</button>
+              <button class="chip" type="button" data-size-filter="L">L</button>
+              <button class="chip" type="button" data-size-filter="XL">XL</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h3>Цвет</h3>
+            <div class="swatch-row" id="colorFilters" aria-label="Фильтр по цвету">
+              <button class="swatch active" type="button" data-color-filter="all" aria-label="Все цвета"></button>
+              <button class="swatch swatch-black" type="button" data-color-filter="black" aria-label="Черный"></button>
+              <button class="swatch swatch-white" type="button" data-color-filter="white" aria-label="Белый"></button>
+              <button class="swatch swatch-cyan" type="button" data-color-filter="cyan" aria-label="Голубой"></button>
+              <button class="swatch swatch-coral" type="button" data-color-filter="coral" aria-label="Коралловый"></button>
+              <button class="swatch swatch-lime" type="button" data-color-filter="lime" aria-label="Лайм"></button>
+              <button class="swatch swatch-silver" type="button" data-color-filter="silver" aria-label="Серебро"></button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h3>Категория</h3>
+            <div class="chip-row" id="typeFilters">
+              <button class="chip active" type="button" data-type-filter="all">Все</button>
+              <button class="chip" type="button" data-type-filter="outerwear">Верх</button>
+              <button class="chip" type="button" data-type-filter="pants">Низ</button>
+              <button class="chip" type="button" data-type-filter="dress">Платья</button>
+              <button class="chip" type="button" data-type-filter="accessory">Аксессуары</button>
+            </div>
+          </div>
+
+          <label class="select-label" for="sortSelect">
+            Сортировка
+            <select id="sortSelect">
+              <option value="popular">Популярное</option>
+              <option value="priceAsc">Цена по возрастанию</option>
+              <option value="priceDesc">Цена по убыванию</option>
+            </select>
+          </label>
+        </aside>
+
+        <section class="catalog-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">live stock</p>
+              <h2 id="catalogTitle">Каталог</h2>
+            </div>
+            <p class="result-count" id="resultCount">0 вещей</p>
+          </div>
+          <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        </section>
+      </section>
+
+      <section class="delivery" id="delivery" aria-labelledby="deliveryTitle">
+        <div>
+          <p class="eyebrow">checkout core</p>
+          <h2 id="deliveryTitle">Оформление без лишних шагов</h2>
+        </div>
+        <div class="delivery-grid">
+          <article>
+            <span>01</span>
+            <h3>Корзина</h3>
+            <p>Размер, цвет и количество меняются прямо в панели заказа.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Контакты</h3>
+            <p>Имя, телефон, адрес и способ оплаты сохраняются в одном окне.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Подтверждение</h3>
+            <p>После отправки появляется финальный экран, корзина очищается.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="style-board" id="style-board" aria-labelledby="styleBoardTitle">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">style matrix</p>
+            <h2 id="styleBoardTitle">Подборки образов</h2>
+          </div>
+          <p class="result-count">3 готовых набора</p>
+        </div>
+        <div class="look-grid">
+          <article class="look-card">
+            <div class="look-card-media">
+              <img src="assets/products/neo-parka.png" alt="Neo Parka 04" loading="lazy" />
+              <img src="assets/products/vector-cargo.png" alt="Vector Cargo" loading="lazy" />
+            </div>
+            <div>
+              <span>01 / night shell</span>
+              <h3>Черный техно-силуэт</h3>
+              <p>Длинная парка, широкие карго и холодный циан для ночного города.</p>
+            </div>
+          </article>
+          <article class="look-card">
+            <div class="look-card-media">
+              <img src="assets/products/aero-shell.png" alt="Aero Shell" loading="lazy" />
+              <img src="assets/products/signal-trousers.png" alt="Signal Trousers" loading="lazy" />
+            </div>
+            <div>
+              <span>02 / chrome clean</span>
+              <h3>Светлый футуризм</h3>
+              <p>Белая shell-куртка и серебристые брюки для чистого студийного образа.</p>
+            </div>
+          </article>
+          <article class="look-card">
+            <div class="look-card-media">
+              <img src="assets/products/pulse-dress.png" alt="Pulse Dress" loading="lazy" />
+              <img src="assets/products/holo-loop-bag.png" alt="Holo Loop Bag" loading="lazy" />
+            </div>
+            <div>
+              <span>03 / pulse color</span>
+              <h3>Акцентный вечер</h3>
+              <p>Коралловое платье и глянцевая сумка-петля для яркого выхода.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Корзина">
+      <div class="drawer-head">
+        <div>
+          <p class="eyebrow">order pod</p>
+          <h2>Корзина</h2>
+        </div>
+        <button class="icon-button" id="closeCartButton" type="button" aria-label="Закрыть корзину">×</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-empty" id="cartEmpty">
+        <h3>Пока пусто</h3>
+        <p>Добавьте вещь из каталога, и она появится здесь.</p>
+      </div>
+      <div class="cart-footer">
+        <div class="total-row">
+          <span>Итого</span>
+          <strong id="cartTotal">0 ₽</strong>
+        </div>
+        <button class="primary-button full" id="checkoutButton" type="button">Оформить заказ</button>
+      </div>
+    </aside>
+
+    <div class="screen-backdrop" id="screenBackdrop"></div>
+
+    <section class="modal" id="checkoutModal" aria-hidden="true" role="dialog" aria-labelledby="checkoutTitle">
+      <form class="checkout-form" id="checkoutForm">
+        <div class="drawer-head">
+          <div>
+            <p class="eyebrow">secure form</p>
+            <h2 id="checkoutTitle">Оформление</h2>
+          </div>
+          <button class="icon-button" id="closeCheckoutButton" type="button" aria-label="Закрыть оформление">×</button>
+        </div>
+        <label>
+          Имя
+          <input name="name" type="text" placeholder="Ваше имя" required />
+        </label>
+        <label>
+          Телефон
+          <input name="phone" type="tel" placeholder="+7 999 000-00-00" required />
+        </label>
+        <label>
+          Адрес доставки
+          <input name="address" type="text" placeholder="Город, улица, дом" required />
+        </label>
+        <label>
+          Оплата
+          <select name="payment">
+            <option>Картой онлайн</option>
+            <option>При получении</option>
+            <option>СБП</option>
+          </select>
+        </label>
+        <button class="primary-button full" type="submit">Подтвердить заказ</button>
+      </form>
+    </section>
+
+    <section class="modal look-modal" id="lookModal" aria-hidden="true" role="dialog" aria-labelledby="lookTitle">
+      <div class="look-modal-inner">
+        <div class="drawer-head">
+          <div>
+            <p class="eyebrow">product preview</p>
+            <h2 id="lookTitle">Preview</h2>
+          </div>
+          <button class="icon-button" id="closeLookButton" type="button" aria-label="Закрыть просмотр">×</button>
+        </div>
+        <div class="look-preview" id="lookPreview"></div>
+        <p id="lookDescription"></p>
+      </div>
+    </section>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
